@@ -25,8 +25,8 @@ No video abaixo é possível visualizar a aplicação em execução.
 
 [![Demonstração aplicação desafio Sefaz](http://img.youtube.com/vi/Uc9gxzgKAqU/0.jpg)](http://www.youtube.com/watch?v=Uc9gxzgKAqU "Demonstração aplicação desafio Sefaz")
 
-Ao acessar o sistema o usuário realiza seu cadastro e em seguida poderá efetuar login no sistema.
-Ao efetuar login corretamente, todos os usuarios cadastrados e seus telefones são exibidos (inclusive do próprio usuário).
+Ao acessar o sistema o usuário realiza seu cadastro e em seguida poderá efetuar login no sistema. <br>
+Ao efetuar login corretamente, todos os usuarios cadastrados e seus telefones são exibidos (inclusive do próprio usuário). <br>
 O usuario tem a opção de efetuar **logout** ou acessar seu **perfil**:
 
 * **Perfil:** Exibe detalhes dos dados do usuário logado no sistema;
@@ -35,11 +35,11 @@ O usuario tem a opção de efetuar **logout** ou acessar seu **perfil**:
 Dentro do perfil o usuario pode verificar mais detalhes sobre seus dados, seus telefones e conta com alguns serviços:
 
 * **Agenda:** Retorna para a visualização dos usuários e seus telefones;
-* **Adicionar um novo telefone:** Para casos em que o usuario passa a ter uma nova linha telefônica;
+* **Adicionar telefone:** Para casos em que o usuario passa a ter uma nova linha telefônica;
 * **Alterar dados do usuario:** O usuario pode corrigir nome e email, caso necessário;
 * **Alterar senha:** O usuário pode redefinir sua senha por questões de segurança;
-* **Alterar dados do telefone:** Para casos em que o usuário troca de chip ou DDD, por exemplo;
-* **apagar um telefone:** Para casos de linha desativada ou pertencente a outro dono;
+* **Alterar telefone:** Para casos em que o usuário troca de chip ou DDD, por exemplo;
+* **Apagar telefone:** Para casos de linha desativada ou pertencente a outro dono;
 * **Excluir o perfil:** Apaga o usuário do sistema, sendo necessário um novo registro para efetuar login;
 * **Logout:** Para sair do sistema.
 
@@ -175,3 +175,8 @@ Testes de CRUD realizados para as classes Usuario e Telefone com resultados 100%
 <img src="img/testeusuario.JPG">
 
 <img src="img/testetelefone.JPG">
+
+### Autor
+
+Guilherme Wolner Dias Monte | guilherme.wdm@gmail.com | linkedin.com/in/guilherme-wolner
+Dúvidas, críticas e sugestões podem entrar em contato
