@@ -1,0 +1,45 @@
+/*Propriedade da div principal*/
+#bloco-agenda{
+    width: 60%; 
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/*Propriedade da div direita*/
+#agenda-right{
+    float: right;
+    margin: 20px;
+}
+
+/*Propriedades da tabela*/
+table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 1px #ddd;
+    padding: 4px;
+}
+
+table tr:nth-child(even){
+    background-color: #77add1;
+    border: 1px solid;
+}
+
+table tr:hover {
+    background-color: #ccecfb;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1163a6;
+    color: #fff;
+}
+

@@ -1,0 +1,16 @@
+/*Propriedade da div principal*/
+#bloco-index{
+    width: 350px; 
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #a9d0e6;
+}
+
+/*Ajuste dos botões de registro e login*/
+#btn-login, #btn-registro{
+    margin-left: auto;
+    margin-right: auto;
+}

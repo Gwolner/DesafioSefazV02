@@ -1,0 +1,63 @@
+/*Padronização das configurações do navegador*/
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/*Propriedade de background*/
+body{
+    background: linear-gradient(to right, #d4ebf8, #ffffff);
+}
+
+/* Titulo principal */
+h1{
+    font-size: 40px;
+    color: #1163a6;
+    text-align: center;
+    margin: 30px;
+}
+
+/* Titulo secundário */
+h2{
+    color: #1163a6;
+    margin: 15px;
+}
+
+/*Propriedade dos links*/
+a{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #1163a6;
+    padding-right: 25px;
+}
+
+/*Propriedade dos botões*/
+button{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    /*width: 15%;*/
+    float: left;
+    padding: 5px 10px;
+    background-color: #519dbb;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+/*Propriedades dos inputs*/
+input{
+    margin: 5px 20px 10px 50px; 
+    border-radius: 5px;
+}
+
+/*Mensagens de eventos*/
+.mensagem{
+    font-size: 20px;
+    text-align: center;
+    color: #FF8C00;
+}
+

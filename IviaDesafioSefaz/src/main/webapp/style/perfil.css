@@ -1,0 +1,94 @@
+/*Propriedade de h2*/
+h2{
+    text-align: center;
+}
+
+/*Propriedade da div da tabela*/
+#bloco-perfil{
+    width: 60%; 
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/*Padrão dos blocos de serviço*/
+.servico-perfil{
+    width: 350px; 
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #a9d0e6;
+}
+
+/*Bloco de serviço externo*/
+#bloco-geral-servico{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-bottom: 25px;*/
+}
+
+/*Posicionamento do bloco de serviço 1*/
+#servico-1{
+    float: left;
+    width: 33%;
+    margin-bottom: 25px;
+}
+
+/*Posicionamento do bloco de serviço 2*/
+#servico-2{
+    float: left;
+    width: 33%;
+    margin-bottom: 25px;
+}
+
+/*Posicionamento do bloco de serviço 3*/
+#servico-3{
+    float: left;
+    width: 34%;
+    margin-bottom: 25px;
+}
+
+/*Propriedades da tabela*/
+table{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border: 1px #ddd;
+    padding: 4px;
+}
+
+table tr:nth-child(even){
+    background-color: #77add1;
+    border: 1px solid;
+}
+
+table tr:hover {
+    background-color: #ccecfb;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #1163a6;
+    color: #fff;
+}
+
+/*Bloco dos campos para atualizar telefone*/
+#div-atualizar-telefone{
+    margin-top: 50px;
+    padding-bottom: 43px;
+}
+
+/*Propriedade da div direita*/
+#perfil-right{
+    float: right;
+    margin: 20px;
+}

@@ -1,0 +1,9 @@
+br\gov\pe\sefaz\controller\servlet\UsuarioServlet.class
+br\gov\pe\sefaz\test\TesteConexaoJDBC.class
+br\gov\pe\sefaz\model\classe\Usuario.class
+br\gov\pe\sefaz\controller\servlet\LoginServlet.class
+br\gov\pe\sefaz\model\dao\UsuarioDAO.class
+br\gov\pe\sefaz\controller\jdbc\ConexaoJDBC.class
+br\gov\pe\sefaz\controller\servlet\TelefoneServlet.class
+br\gov\pe\sefaz\model\classe\Telefone.class
+br\gov\pe\sefaz\model\dao\TelefoneDAO.class
