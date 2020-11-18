@@ -178,5 +178,5 @@ Testes de CRUD realizados para as classes Usuario e Telefone com resultados 100%
 
 ### Autor
 
-Guilherme Wolner Dias Monte | guilherme.wdm@gmail.com | linkedin.com/in/guilherme-wolner
-Dúvidas, críticas e sugestões podem entrar em contato
+Guilherme Wolner Dias Monte | guilherme.wdm@gmail.com | linkedin.com/in/guilherme-wolner <br>
+Dúvidas, críticas e sugestões podem entrar em contato.
