@@ -2,52 +2,31 @@
 
 > Projeto desenvolvido para o desafio proposto pela Sefaz como parte da seleção para Desenvolvedor Java Júnior da IVIA.
 
-Neste desafio eu busquei focar nos pontos mais relevantes que um projeto de software deve ter: definição e divisão das responsabilidade de cada componente, definição e controle na forma em que estes componentes interagem entre si, flexibilidade para correção de falhas, manutenção e uma estrutura que permita expansão. 
+Neste desafio eu busquei focar nos pontos mais relevantes que um projeto de software deve ter: definição e divisão das responsabilidade de cada componente, definição e controle na forma em que estes componentes interagem entre si, flexibilidade para correção de falhas/manutenção e uma estrutura que permita expansão. 
 
-Desta forma, os pontos fortes deste projeto são as camadas em que os componentes estão estruturados, a relação entre eles, os comentários presentes para facilitar o entendimento por parte de outros desenvolvedores.
 
 ## Ferramentas utilizadas
 
 [Apache Netbeans IDE 12.0 (LTS)](http://netbeans.apache.org/download/index.html) como ambiente de desenvolvimento da aplicação; <br>
-[Apache Maven](https://maven.apache.org/) integrado ao Netbeans para ontrole de dependências, compilação e execução do projeto; <br>
+[Apache Tomcat](https://tomcat.apache.org/download-90.cgi) como servidor para execução do projeto; <br>
+[Apache Maven](https://maven.apache.org/) integrado ao Netbeans para controle de dependências, compilação e execução do projeto; <br>
 [JUnit](https://mvnrepository.com/artifact/junit/junit) para execução dos testes de CRUD; <br>
 [HSQLDB](http://hsqldb.org/) adotado como banco de dados relacional SQL.
 
 ## Sobre o projeto
 
-Inicialmente minha idéia era criar um sistema em que, após o cadastro e login, o usuário pudesse visualizar os dados de todos os usuários, seus telefones e excluir e atualziar a vontade. Porém, no mundo real, não se usa um sistema assim (exceto sistemas com níveis de administrador) então eu decidi criar algo mais próximo da realidade. Deu mais trabalho, mas foi gratificante.
+Inicialmente minha idéia era criar um sistema em que, após o cadastro e login, o usuário pudesse visualizar os dados de todos os usuários, seus telefones e excluir e atualizar a vontade. Porém, no mundo real, não se usa um sistema assim (exceto sistemas com níveis de administrador) então eu decidi criar algo mais próximo da realidade. Deu mais trabalho, mas foi gratificante.
 
-De forma simplificada: o usuário se cadastra, faz o login e dentro do sistema pode visualizar todos os usuários e seus telefones, sem  alterações ou exclusão. As únicas coisas que o usuário pode alterar e excluir são seus telefones e sua conta no sistema. Ou seja, apenas cada usuário altera e exclui seus próprios dados. Com esta abordagem eu pude identificar pontos fortes e ponto para maturar como desenvolvedor.
+De forma simplificada: o usuário se cadastra, faz o login e dentro do sistema pode visualizar todos os usuários e seus telefones, sem  alterações ou exclusão. As únicas coisas que o usuário pode alterar e excluir são seus telefones e sua conta no sistema. Ou seja, apenas o próprio usuário altera e exclui seus dados. Com esta abordagem eu pude identificar pontos fortes e ponto para maturar como desenvolvedor.
 
-**O que foi pedido:**
-``` 
-Você poderá adicionar e estender a vontade os requisitos da aplicação.
+## Vídeo demonstração
 
-A aplicação deverá permitir um cadastro de usuários onde teremos as seguintes funcionalidades:
+No video abaixo é possível visualizar a aplicação em execução.
 
-1. Fazer login
-2. Consultar Usuários (Lista todos)
-3. Incluir Usuário
-4. Alterar Usuário
-5. Remover Usuário
-
-A estrutura do usuário
-
-• Nome [string]
-• Email [string]
-• Senha[string]
-• Telefones [lista] 
-o ddd [número] 
-o Número [string] 
-o Tipo [string]
-```
-
-**O que foi entregue:**
+[![Demonstração aplicação desafio Sefaz](http://img.youtube.com/vi/Uc9gxzgKAqU/0.jpg)](http://www.youtube.com/watch?v=Uc9gxzgKAqU "Demonstração aplicação desafio Sefaz")
 
 Ao acessar o sistema o usuário realiza seu cadastro e em seguida poderá efetuar login no sistema.
-
 Ao efetuar login corretamente, todos os usuarios cadastrados e seus telefones são exibidos (inclusive do próprio usuário).
-
 O usuario tem a opção de efetuar **logout** ou acessar seu **perfil**:
 
 * **Perfil:** Exibe detalhes dos dados do usuário logado no sistema;
@@ -146,6 +125,8 @@ Para persistência no HSQLDB utilizai o JDBC juntamente com o Design Patterns Si
 
 A versão do java utilizada foi a 1.8.0_201. 
 
+<img src="img/versaojava.JPG">
+
 ### Utilizar na interface JSF/Primefaces ou JSP com jQuery e Ajax ✔
 
 Optei o uso do JSP para construção da View por ter mais afinidade com ela do que JSF. Fiz uso do JQuery para lidar com o comportamento de ocultar/exibir formulários e para o AJAX, optei pelo fetch para realizar as requisições assíncronas com os métodos doPut e doDelete dos servlets. Para complementar, fiz uso de mais JS além do fetch e utilizei CSS para definir o layout e as cores nas telas.
@@ -157,14 +138,6 @@ Aplicação disponível **neste** repositório.
 ### O que você não pode utilizar: Spring / Angular ✔
 
 Esta regra foi respeitada e nenhum dos dois foram utilizados.
-
-## Requisitos desejáveis
-
-Meu objetivo era gerar um link com a aplicação rodando no Heroku e realizar os testes de JUnit. No primeiro, a aplicação não estava conversando com o Postgre (BD usado no Heroku). Tentei buscar soluções, mas não resolvendo em tempo hábil, decidi voltar a investir no projeto e aprender JUnit para incrementar o projeto.
-
-### JUnit
-
-Testes de CRUD realizados para as classes Usuario e Telefone com resultados 100% OK.
 
 ## Queries do BD
 
@@ -191,4 +164,14 @@ CREATE TABLE IF NOT EXISTS telefone(
 );
 ```
 
+## Requisitos desejáveis
 
+Meu objetivo era gerar um link com a aplicação rodando no Heroku e realizar os testes de JUnit. No primeiro, a aplicação não estava conversando com o Postgre (BD usado no Heroku). Tentei buscar soluções, mas não resolvendo em tempo hábil, decidi voltar a investir no projeto e aprender JUnit para incrementar o projeto.
+
+### JUnit
+
+Testes de CRUD realizados para as classes Usuario e Telefone com resultados 100% OK.
+
+<img src="img/testeusuario.JPG">
+
+<img src="img/testetelefone.JPG">
