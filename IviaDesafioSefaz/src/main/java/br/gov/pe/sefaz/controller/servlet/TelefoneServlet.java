@@ -10,7 +10,6 @@ import br.gov.pe.sefaz.model.dao.UsuarioDAO;
 import br.gov.pe.sefaz.model.classe.Telefone;
 import br.gov.pe.sefaz.model.classe.Usuario;
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

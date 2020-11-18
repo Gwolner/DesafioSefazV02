@@ -30,7 +30,13 @@
             <!--Foi preciso mudar de "test" para "compile" para que o banco conectasse-->
             <!--<scope>test</scope>-->
             <scope>compile</scope>
-        </dependency>
+        </dependency>        
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <scope>test</scope>
+        </dependency>        
     </dependencies>
 
     <build>

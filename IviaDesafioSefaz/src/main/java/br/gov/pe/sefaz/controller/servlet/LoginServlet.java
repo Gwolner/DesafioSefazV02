@@ -8,7 +8,6 @@ package br.gov.pe.sefaz.controller.servlet;
 import br.gov.pe.sefaz.model.dao.UsuarioDAO;
 import br.gov.pe.sefaz.model.classe.Usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
