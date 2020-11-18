@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" time="2.379" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" time="4.265" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_201\jre\bin"/>
@@ -65,8 +65,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste1PersistirUsuario" time="0.981"/>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste2ConsultarUsuario" time="0.474"/>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste3AtualizarUsuario" time="0.472"/>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste4RemoverUsuario" time="0.452"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste1PersistirUsuario" time="1.104"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste2ConsultarUsuario" time="1.305"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste3AtualizarUsuario" time="1.192"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.UsuarioCRUD" name="teste4RemoverUsuario" time="0.664"/>
 </testsuite>

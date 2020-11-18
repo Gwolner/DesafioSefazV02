@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="4" failures="0" name="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" time="2.518" errors="0" skipped="0">
+<testsuite tests="4" failures="0" name="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" time="1.979" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_201\jre\bin"/>
@@ -65,8 +65,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste1PersistirTelefone" time="1.078"/>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste2AtualizarTelefone" time="0.448"/>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste3ConsultarTelefone" time="0.459"/>
-  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste4RemoverTelefone" time="0.533"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste1PersistirTelefone" time="0.818"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste2AtualizarTelefone" time="0.355"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste3ConsultarTelefone" time="0.402"/>
+  <testcase classname="br.gov.pe.sefaz.junit.crud.TelefoneCRUD" name="teste4RemoverTelefone" time="0.404"/>
 </testsuite>

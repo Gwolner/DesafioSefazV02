@@ -155,9 +155,6 @@ public class UsuarioServlet extends HttpServlet {
 
             int idUsuarioTemp = (int) session.getAttribute("idLogin");
 
-            System.out.println("ID LOGIN: " + idUsuarioTemp);
-            System.out.println("SENHA NOVA: " + novaSenhaTemp);
-
             //Invoca o DAO alterar a senha do usuario
             boolean retorno = UsuarioDAO.alterarSenha(idUsuarioTemp, novaSenhaTemp);
 
