@@ -1,4 +1,4 @@
-# IVIA - Desafio Sefaz
+# IVIA - Desafio Sefaz V02
 
 > Projeto desenvolvido para o desafio proposto pela Sefaz como parte da seleção para Desenvolvedor Java Júnior da IVIA.
 
