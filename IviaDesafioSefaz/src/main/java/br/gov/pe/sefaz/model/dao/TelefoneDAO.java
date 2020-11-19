@@ -72,13 +72,13 @@ public class TelefoneDAO {
             //Exibe mensagem mais detalhada do problema
             exSql.printStackTrace();    
             
+            //Executa o rollback
+            conn.rollback();
+            
         }finally{            
             
             //Fechando conexão com so BD
-            ConexaoJDBC.desconectar();
-            
-            //Executa o rollback
-            conn.rollback();
+            ConexaoJDBC.desconectar();      
         }        
         
         return !retTelefone;
@@ -130,15 +130,15 @@ public class TelefoneDAO {
         }catch(SQLException exSql){       
             
             //Exibe mensagem mais detalhada do problema
-            exSql.printStackTrace();     
+            exSql.printStackTrace();   
+            
+            //Executa o rollback
+            conn.rollback();
             
         }finally{
             
             //Fechando conexão com o BD
             ConexaoJDBC.desconectar();
-            
-            //Executa o rollback
-            conn.rollback();
         }
         
         return telefones;
