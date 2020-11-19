@@ -32,7 +32,7 @@ public class TelefoneDAO {
     private static PreparedStatement pst = null;
     
     //Cadastra telefone
-    public static boolean incluirTelefone(Usuario usuario){
+    public static boolean incluirTelefone(Usuario usuario) throws SQLException{
 
         boolean retTelefone = true;
         
@@ -40,6 +40,9 @@ public class TelefoneDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
+            //Desativa o commit automático
+            conn.setAutoCommit(false);
+            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_INCLUIR_TELEFONES);
             
@@ -58,6 +61,9 @@ public class TelefoneDAO {
             //Executa a inserção. Se houver problemas(true), sinaliza retorno false
             retTelefone = pst.execute();
 
+            //Chama commmit
+            conn.commit();
+            
             //Término de uso do recurso PreparedStatement
             pst.close();            
            
@@ -70,13 +76,16 @@ public class TelefoneDAO {
             
             //Fechando conexão com so BD
             ConexaoJDBC.desconectar();
+            
+            //Executa o rollback
+            conn.rollback();
         }        
         
         return !retTelefone;
     }
     
     //Lista TODOS os Telefones de um Usuario
-    public static ArrayList<Telefone> consultarTelefones(int idUsuario){
+    public static ArrayList<Telefone> consultarTelefones(int idUsuario) throws SQLException{
         
         ResultSet rst;
         Telefone telefoneTemp;
@@ -86,6 +95,9 @@ public class TelefoneDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
+            //Desativa o commit automático
+            conn.setAutoCommit(false);
+            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_CONSULTAR_TELEFONES_POR_ID_USUARIO);
            
@@ -106,6 +118,9 @@ public class TelefoneDAO {
                 telefones.add(telefoneTemp);
             }
 
+            //Chama commmit
+            conn.commit();
+            
             //Fecha o ResultSet
             rst.close();
             
@@ -121,13 +136,16 @@ public class TelefoneDAO {
             
             //Fechando conexão com o BD
             ConexaoJDBC.desconectar();
+            
+            //Executa o rollback
+            conn.rollback();
         }
         
         return telefones;
     };
     
     //Consulta telefone pelo id
-    public static Telefone consultarTelefonesPorId(int idTelefone){
+    public static Telefone consultarTelefonesPorId(int idTelefone) throws SQLException{
         
         ResultSet rst;
         Telefone telefoneTemp = null;
@@ -136,6 +154,9 @@ public class TelefoneDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
+            //Desativa o commit automático
+            conn.setAutoCommit(false);
+            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_CONSULTAR_TELEFONES_POR_ID);
            
@@ -155,6 +176,9 @@ public class TelefoneDAO {
                 telefoneTemp.setIdUsuario(rst.getInt("idUsuario"));
             }
 
+            //Chama commmit
+            conn.commit();
+            
             //Fecha o ResultSet
             rst.close();
             
@@ -164,7 +188,10 @@ public class TelefoneDAO {
         }catch(SQLException exSql){    
             
             //Exibe mensagem mais detalhada do problema
-            exSql.printStackTrace(); 
+            exSql.printStackTrace();
+            
+            //Executa o rollback
+            conn.rollback();
             
         }finally{
             
@@ -176,7 +203,7 @@ public class TelefoneDAO {
     };
     
     //Remove um telefone específico
-    public static boolean removerTelefone(int idTelefone){
+    public static boolean removerTelefone(int idTelefone) throws SQLException{
         
         boolean retExclusao = true;
         
@@ -184,6 +211,9 @@ public class TelefoneDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
+            //Desativa o commit automático
+            conn.setAutoCommit(false);
+            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_REMOVER_TELEFONE);
            
@@ -193,6 +223,9 @@ public class TelefoneDAO {
             //Executa a deleção do telefone
             retExclusao = pst.execute(); 
             
+            //Chama commmit
+            conn.commit();
+            
             //Término de usar o recurso PreparedStatement.
             pst.close();
             
@@ -200,6 +233,9 @@ public class TelefoneDAO {
             
             //Exibe mensagem mais detalhada do problema
             exSql.printStackTrace(); 
+            
+            //Executa o rollback
+            conn.rollback();
             
         }finally{
             
@@ -211,7 +247,7 @@ public class TelefoneDAO {
     }; 
     
     //Remove todos os telefones de um usuario
-    public static boolean removerTelefonesDoUsuario(int idUsuario){
+    public static boolean removerTelefonesDoUsuario(int idUsuario) throws SQLException{
         
         boolean retTelefones;
         boolean retUsuario = false;
@@ -220,6 +256,9 @@ public class TelefoneDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
+            //Desativa o commit automático
+            conn.setAutoCommit(false);
+            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_REMOVER_TELEFONES_DO_USUARIO);
            
@@ -233,6 +272,9 @@ public class TelefoneDAO {
                 retUsuario = removerUsuario(idUsuario);
             }
             
+            //Chama commmit
+            conn.commit();
+            
             //Término de usar o recurso PreparedStatement.
             pst.close();
             
@@ -240,6 +282,9 @@ public class TelefoneDAO {
             
             //Exibe mensagem mais detalhada do problema
             exSql.printStackTrace();
+            
+            //Executa o rollback
+            conn.rollback();
             
         }finally{
             
@@ -251,7 +296,7 @@ public class TelefoneDAO {
     };
   
     //Altera dados do telefone
-    public static boolean alterarTelefone(int idTelefoneTemp, int ddd, String numero, String tipo){
+    public static boolean alterarTelefone(int idTelefoneTemp, int ddd, String numero, String tipo) throws SQLException{
         
         boolean retAtualziacao = false;
         
@@ -259,6 +304,9 @@ public class TelefoneDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
+            //Desativa o commit automático
+            conn.setAutoCommit(false);
+            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_ALTERAR_TELEFONE);
                         
@@ -271,6 +319,9 @@ public class TelefoneDAO {
             //Executa a alteração do telefone
             retAtualziacao = pst.execute(); 
             
+            //Chama commmit
+            conn.commit();
+            
             //Término de usar o recurso PreparedStatement.
             pst.close();
             
@@ -278,6 +329,9 @@ public class TelefoneDAO {
             
             //Exibe mensagem mais detalhada do problema
             exSql.printStackTrace();
+            
+            //Executa o rollback
+            conn.rollback();
             
         }finally{
             
