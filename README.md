@@ -73,7 +73,7 @@ O projeto adota JavaEE e isto pode ser visualizado nas dependências do arquivo 
 
 ### Estruturar a aplicação em camadas ✔
 
-O projeto foi estruturado com base no Design Patterns MVC e DAO de modo a permitir que cada componente da aplicação tenha suas responsabilidades bem definidas, permitindo assim uma maior flexibilidades para mudanças no projeto, bem como na sua manutenção. 
+O projeto foi estruturado com base nos Design Patterns MVC e DAO de modo a permitir que cada componente da aplicação tenha suas responsabilidades bem definidas, permitindo assim uma maior flexibilidades para mudanças no projeto, bem como na sua manutenção. 
 
 ### Uso de banco de dados relacional/SQL (preferencialmente HSQLDB ou H2) ✔
 
@@ -119,7 +119,7 @@ Abaixo, um snippet do conteúdo Maven presente no arquivo pom.xml, adicionado au
 
 ### Persistência utilizando JDBC ou JPA ✔
 
-Para persistência no HSQLDB utilizai o JDBC juntamente com o Design Patterns Singleton. Desta forma, o modo como a aplicação lida com as conexões fica mais flúida, tendo em vista que o próprio HSQLDB so aceita uma conexão por vez.
+Para persistência no HSQLDB utilizei o JDBC juntamente com o Design Patterns Singleton. Desta forma, o modo como a aplicação lida com as conexões fica mais flúida, tendo em vista que o próprio HSQLDB so aceita uma conexão por vez.
 
 ### Utilizar no mínimo Java 8 ✔
 
@@ -163,6 +163,7 @@ CREATE TABLE IF NOT EXISTS telefone(
 	tipo VARCHAR(20) NOT NULL
 );
 ```
+**OBS:** É necessário alterar o parâmetro `pathBase` dentro do arquivo `ConexaoJDBC.java`, pois ele contém o caminho LOCAL que aponta para o banco de dados `sefaz`. 
 
 ## Requisitos desejáveis
 
