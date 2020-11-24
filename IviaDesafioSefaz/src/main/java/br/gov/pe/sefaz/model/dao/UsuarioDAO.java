@@ -34,7 +34,7 @@ public class UsuarioDAO {
        
     
     //Consulta o id pelo usuario
-    public static int consultarIdUsuario(Usuario usuario) throws SQLException{
+    public static int consultarIdUsuario(Usuario usuario){
         
         ResultSet rst;
         int idUsuario = -1;
@@ -43,9 +43,6 @@ public class UsuarioDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
-            //Desativa o commit automático
-            conn.setAutoCommit(false);
-            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_CONSULTAR_ID_USUARIO);
             
@@ -61,9 +58,6 @@ public class UsuarioDAO {
                 idUsuario = Integer.parseInt(rst.getString("id"));
             }
             
-            //Chama commmit
-            conn.commit();
-            
             //Fecha o ResultSet
             rst.close();
             
@@ -75,9 +69,6 @@ public class UsuarioDAO {
             //Exibe mensagem mais detalhada do problema
             exSql.printStackTrace();
             
-            //Executa o rollback
-            conn.rollback();
-            
         }finally{
             
             //Fechando conexão com o BD
@@ -88,7 +79,7 @@ public class UsuarioDAO {
     };
     
     //Consultar usuario pelo id
-    public static Usuario consultarUsuario(int idUsuario) throws SQLException{
+    public static Usuario consultarUsuario(int idUsuario){
         
         ResultSet rst;
         Usuario retUsuario = null;
@@ -97,9 +88,6 @@ public class UsuarioDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
-            //Desativa o commit automático
-            conn.setAutoCommit(false);
-            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_CONSULTAR_USUARIO);
             
@@ -118,9 +106,6 @@ public class UsuarioDAO {
                 retUsuario.setTelefones(TelefoneDAO.consultarTelefones(rst.getInt("id")));
             }
             
-            //Chama commmit
-            conn.commit();
-            
             //Fecha o ResultSet
             rst.close();
             
@@ -130,10 +115,7 @@ public class UsuarioDAO {
         }catch(SQLException exSql){
             
             //Exibe mensagem mais detalhada do problema
-            exSql.printStackTrace(); 
-            
-            //Executa o rollback
-            conn.rollback();
+            exSql.printStackTrace();            
             
         }finally{
             
@@ -145,7 +127,7 @@ public class UsuarioDAO {
     };
     
     //Cadastra usuario no sistema
-    public static boolean incluirUsuario(Usuario usuario) throws SQLException{
+    public static boolean incluirUsuario(Usuario usuario){
         
         boolean retUsuario = true;
         boolean retTelefones = false;
@@ -154,9 +136,6 @@ public class UsuarioDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
-            //Desativa o commit automático
-            conn.setAutoCommit(false);
-            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_INCLUIR_USUARIO);
             
@@ -175,20 +154,13 @@ public class UsuarioDAO {
                 retTelefones = TelefoneDAO.incluirTelefone(usuario);                
             }
             
-            //Chama commmit
-            conn.commit();
-            
             //Término de usar o recurso PreparedStatement
             pst.close();
             
         }catch(SQLException exSql){           
             
             //Exibe mensagem mais detalhada do problema
-            exSql.printStackTrace(); 
-            
-            //Executa o rollback
-            conn.rollback();
-            
+            exSql.printStackTrace();            
         }finally{
             
             //Fechando conexão com o BD
@@ -200,7 +172,7 @@ public class UsuarioDAO {
     };
     
     //Lista TODOS os usuarios
-    public static ArrayList<Usuario> consultarUsuarios() throws SQLException{
+    public static ArrayList<Usuario> consultarUsuarios(){
         
         ResultSet rst;
         Usuario usuarioTemp = null;
@@ -211,9 +183,6 @@ public class UsuarioDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
-            //Desativa o commit automático
-            conn.setAutoCommit(false);
-            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_CONSULTAR_USUARIOS);
            
@@ -235,9 +204,6 @@ public class UsuarioDAO {
                 usuarios.add(usuarioTemp);
             }
             
-            //Chama commmit
-            conn.commit();
-            
             //Fecha o ResultSet
             rst.close();
             
@@ -249,9 +215,6 @@ public class UsuarioDAO {
             //Exibe mensagem mais detalhada do problema
             exSql.printStackTrace();
             
-            //Executa o rollback
-            conn.rollback();
-            
         }finally{
             
             //Fechando conexão com o BD
@@ -262,7 +225,7 @@ public class UsuarioDAO {
     };
     
     //Altera os dados do usuario, exceto a senha
-    public static boolean alterarUsuario(int idUsuario, String nome, String email) throws SQLException{
+    public static boolean alterarUsuario(int idUsuario, String nome, String email){
         
         boolean retAtualziacao = true;
         
@@ -270,9 +233,6 @@ public class UsuarioDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
-            //Desativa o commit automático
-            conn.setAutoCommit(false);
-            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_ALTERAR_USUARIO);
             
@@ -284,20 +244,13 @@ public class UsuarioDAO {
             //Executa a deleção do telefone
             retAtualziacao = pst.execute(); 
             
-            //Chama commmit
-            conn.commit();
-            
             //Término de usar o recurso PreparedStatement
             pst.close();
             
         }catch(SQLException exSql){ 
             
             //Exibe mensagem mais detalhada do problema
-            exSql.printStackTrace();
-            
-            //Executa o rollback
-            conn.rollback();
-            
+            exSql.printStackTrace();            
         }finally{
             
             //Fechando conexão com o BD
@@ -308,7 +261,7 @@ public class UsuarioDAO {
     };
     
     //Altera apenas a senha do usuario
-    public static boolean alterarSenha(int idUsuario, String novaSenha) throws SQLException{
+    public static boolean alterarSenha(int idUsuario, String novaSenha){
         
         boolean retAtualziacao = true;
         
@@ -316,9 +269,6 @@ public class UsuarioDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
-            //Desativa o commit automático
-            conn.setAutoCommit(false);
-            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_ALTERAR_SENHA_USUARIO);
             
@@ -329,19 +279,13 @@ public class UsuarioDAO {
             //Executa a deleção do telefone
             retAtualziacao = pst.execute(); 
             
-            //Chama commmit
-            conn.commit();
-            
             //Término de usar o recurso PreparedStatement
             pst.close();
             
         }catch(SQLException exSql){ 
             
             //Exibe mensagem mais detalhada do problema
-            exSql.printStackTrace();
-            
-            //Executa o rollback
-            conn.rollback();
+            exSql.printStackTrace();  
             
         }finally{
             
@@ -353,7 +297,7 @@ public class UsuarioDAO {
     };
     
     //Deleta o usuario do sistema, bem como seus respectivos telefones
-    public static boolean removerUsuario(int idUsuario) throws SQLException{
+    public static boolean removerUsuario(int idUsuario){
         
         boolean retExclusao = true;
         
@@ -361,9 +305,6 @@ public class UsuarioDAO {
         Connection conn = ConexaoJDBC.conectar();
         
         try{
-            //Desativa o commit automático
-            conn.setAutoCommit(false);
-            
             //Atribui a query ao PreparedStatement
             pst = conn.prepareStatement(SQL_REMOVER_USUARIO);
            
@@ -373,9 +314,6 @@ public class UsuarioDAO {
             //Executa a deleção do telefone
             retExclusao = pst.execute(); 
             
-            //Chama commmit
-            conn.commit();
-            
             //Término de usar o recurso PreparedStatement
             pst.close();
             
@@ -383,9 +321,6 @@ public class UsuarioDAO {
             
             //Exibe mensagem mais detalhada do problema
             exSql.printStackTrace();
-            
-            //Executa o rollback
-            conn.rollback();
             
         }finally{
             
