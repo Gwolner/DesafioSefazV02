@@ -1,6 +1,6 @@
 # IVIA - Desafio Sefaz v02
 
-> Projeto desenvolvido para o desafio proposto pela Sefaz como parte da seleção para Desenvolvedor Java Júnior da IVIA.
+> Projeto desenvolvido como solução para o desafio proposto pela Sefaz PE (Secretaria da Fazenda de Pernambuco) como parte da seleção para Desenvolvedor Java Júnior da IVIA | a Wipro Company.
 
 Neste desafio eu busquei focar nos pontos mais relevantes que um projeto de software deve ter: definição e divisão das responsabilidade de cada componente, definição e controle na forma em que estes componentes interagem entre si, flexibilidade para correção de falhas/manutenção e uma estrutura que permita expansão. 
 
